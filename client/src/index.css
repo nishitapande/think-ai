@@ -1,0 +1,83 @@
+
+html{
+  box-sizing: border-box;
+  font-family: "Caladea", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+/* common css */
+
+h2, h3{
+  text-align: center;
+  font-size: 30px;
+  margin: 2rem;
+  font-weight: 400;
+  font-style: normal;
+  font-family: "Caladea", serif;
+  letter-spacing: 0.5;
+  text-transform: capitalize;
+}
+
+h3{
+  text-align: left;
+  margin-left: 1rem;
+}
+
+.header-dropdown{
+  background-color: #50759a;
+  height: 40px;
+  border: none;
+}
+/* Team Page Css */
+
+.card{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  /* flexasis: "4", */
+  margin: 1rem;
+  gap: 2rem;
+  overflow-y: hidden;
+  justify-content: flex-start;
+  align-items: center;
+  border: none;
+}
+
+.team-card,
+.event-card{
+  width: 15rem;
+  cursor: pointer;
+   margin: 10px 0 20px;
+   box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+   border: none;
+   border-radius: 10px;
+   overflow: hidden;
+   transition: all 0.3s ease-in-out;
+}
+.team-card img{
+  width: 100%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+
+}
+.team-card:hover,
+.event-card:hover{
+  transform: scale(1.05);
+}
+.text-center{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.text{
+  letter-spacing: 0;
+  text-transform: capitalize;
+
+}
+.social-icons{
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  align-items: center;
+}
