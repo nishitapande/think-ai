@@ -9,7 +9,7 @@ const TeamPage = () => {
   useEffect(() => {
     (async () => {
       const response = await axios.get(`${baseURL}/api/team`);
-      //console.log(response.data.teammembers);
+      console.log(response.data.teammembers);
       setMembers(response.data.teammembers);
     })();
   }, []);
