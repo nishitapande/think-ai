@@ -2,12 +2,13 @@ import React, { useState, useEffect } from "react";
 import Member from "../components/Member";
 import { Row, Col } from "react-bootstrap";
 //import teamMembers from "../data/teamdata";
+import { baseURL } from "../utils";
 import axios from "axios";
 const TeamPage = () => {
   const [members, setMembers] = useState([]);
   useEffect(() => {
     (async () => {
-      const response = await axios.get("/api/team");
+      const response = await axios.get(`${baseURL}/api/team`);
       //console.log(response.data.teammembers);
       setMembers(response.data.teammembers);
     })();
