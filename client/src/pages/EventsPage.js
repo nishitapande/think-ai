@@ -1,12 +1,29 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Event from "../components/Event";
-import events from "../data/eventData";
+
+import axios from "axios";
 const EventsPage = () => {
+  const [upcommimgEvent, setUpcommimgEvent] = useState([]);
+  const [pastEvent, setPastEvent] = useState([]);
+
+  useEffect(() => {
+    (async () => {
+      const response = await axios.get("/api/events");
+      const upcomming = response.data.filter(
+        (event) => event.upcomming === true
+      );
+      setUpcommimgEvent(upcomming);
+      const pastEventData = response.data.filter(
+        (event) => event.upcomming === false
+      );
+      setPastEvent(pastEventData);
+    })();
+  }, []);
   return (
     <div>
-      <h2>Events Page</h2>
-      <Event events={events} text={"upcomming"} />
-      <Event events={events} text={"past"} />
+      <Event events={upcommimgEvent} text={"upcomming"} />
+
+      <Event events={pastEvent} text={"past"} />
     </div>
   );
 };

@@ -1,30 +1,41 @@
 import React from "react";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
+import { Row, Col } from "react-bootstrap";
+
 const Event = ({ events, text }) => {
   return (
     <div>
-      <h3>{text === "upcomming" ? `Upcomming Events` : `Past Events`}</h3>
+      <h2>{text === "upcomming" ? `Upcomming Events` : `Past Events`}</h2>
       {events.length === 0 ? (
-        <span>Soory No current events</span>
+        <span>Sorry No current events</span>
       ) : (
-        <div className="card">
+        <Row>
           {events.map((event) => {
             return (
-              <Card className="event-card">
-                <Card.Img variant="top" src={event.img} />
-                <Card.Body>
-                  <Card.Title>{event.title}</Card.Title>
-                  <Card.Text>
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
-                  </Card.Text>
-                  <Button variant="primary">Register</Button>
-                </Card.Body>
-              </Card>
+              <Col>
+                <Card className="event-card">
+                  <Card.Img
+                    variant="top"
+                    src={event.coverImg}
+                    alt={`${event.title}`}
+                  />
+                  <Card.Body style={{ padding: 0 }}>
+                    <h3 className="text-center">{event.title}</h3>
+                    <Card.Text>{event.description}</Card.Text>
+                    {text === "upcomming" ? (
+                      <a href={event.registerLink} target="_blank">
+                        <Button variant="primary">Register</Button>
+                      </a>
+                    ) : (
+                      <h2>no button</h2>
+                    )}
+                  </Card.Body>
+                </Card>
+              </Col>
             );
           })}
-        </div>
+        </Row>
       )}
     </div>
   );

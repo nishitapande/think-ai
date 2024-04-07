@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const event = new mongoose.Schema({
+const eventSchema = new mongoose.Schema({
   title: {
     type: String,
     required: [true, "A event must have a title"],
@@ -16,9 +16,17 @@ const event = new mongoose.Schema({
     type: String,
     //required: [true, "A event must have a description"],
   },
-  dateOfEvent:{
+  dateOfEvent: {
     type: Date,
     //required: [true, "A event must have a date"],
   },
-  
+  upcomming: {
+    type: Boolean,
+    //required: [true, "A event must have an upcomming status"],
+    default: true,
+  },
 });
+
+const Event = mongoose.model("Event", eventSchema);
+
+module.exports = Event;
