@@ -7,7 +7,9 @@ const TeamPage = () => {
   const [members, setMembers] = useState([]);
   useEffect(() => {
     (async () => {
-      const response = await axios.get("/api/team");
+      const response = await axios.get(
+        "https://think-ai-server-nishita.onrender.com/api/team"
+      );
       //console.log(response.data.teammembers);
       setMembers(response.data.teammembers);
     })();
