@@ -8,7 +8,7 @@ const TeamPage = () => {
   const [members, setMembers] = useState([]);
   useEffect(() => {
     (async () => {
-      const response = await axios.get(`${baseURL}/api/team`);
+      const response = await axios.get(`/api/team`);
       console.log(response.data.teammembers);
       setMembers(response.data.teammembers);
     })();
