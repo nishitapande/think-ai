@@ -85,9 +85,7 @@ h3{
   font-family: "Caladea", serif;
   letter-spacing: 0.5;
   text-transform: capitalize;
-  overflow: hidden;
-text-overflow: ellipsis;
-white-space: nowrap;
+
 }
 
 .social-icons{
