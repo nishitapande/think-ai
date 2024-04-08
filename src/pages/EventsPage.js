@@ -1,17 +1,15 @@
 import React, { useState, useEffect } from "react";
 import Event from "../components/Event";
+import { baseURL } from "../utils";
 
 import axios from "axios";
 const EventsPage = () => {
   const [upcommimgEvent, setUpcommimgEvent] = useState([]);
   const [pastEvent, setPastEvent] = useState([]);
 
-  const response = axios.get("${baseURL}/api/events");
-  console.log(response);
-
   useEffect(() => {
     (async () => {
-      const response = await axios.get("${baseURL}/api/events");
+      const response = await axios.get(`${baseURL}/api/events`);
       console.log(response);
       const upcomming = response.data.filter(
         (event) => event.upcomming === true
