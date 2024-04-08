@@ -9,6 +9,7 @@ const EventsPage = () => {
   useEffect(() => {
     (async () => {
       const response = await axios.get("${baseURL}/api/events");
+      console.log(response);
       const upcomming = response.data.filter(
         (event) => event.upcomming === true
       );
