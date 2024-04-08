@@ -6,6 +6,9 @@ const EventsPage = () => {
   const [upcommimgEvent, setUpcommimgEvent] = useState([]);
   const [pastEvent, setPastEvent] = useState([]);
 
+  const response = axios.get("${baseURL}/api/events");
+  console.log(response);
+
   useEffect(() => {
     (async () => {
       const response = await axios.get("${baseURL}/api/events");
