@@ -24,7 +24,6 @@ const EventsPage = () => {
   return (
     <div>
       <Event events={upcommimgEvent} text={"upcomming"} />
-
       <Event events={pastEvent} text={"past"} />
     </div>
   );

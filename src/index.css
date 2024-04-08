@@ -76,9 +76,40 @@ h3{
   text-transform: capitalize;
 
 }
+
+.card-text{
+  padding: 10px;
+  font-size: 16px;
+  font-weight: 400;
+  font-style: normal;
+  font-family: "Caladea", serif;
+  letter-spacing: 0.5;
+  text-transform: capitalize;
+  overflow: hidden;
+text-overflow: ellipsis;
+white-space: nowrap;
+}
+
 .social-icons{
   display: flex;
   gap: 0.5rem;
   justify-content: center;
   align-items: center;
+}
+.card-button{
+  border: none;
+  color: #202020;
+  cursor: pointer;
+  background-color: transparent;
+}
+.card-text{
+
+}
+
+.event-card-button{
+  display: flex;
+  border: none;
+  margin: auto;
+  margin-bottom: 20px;
+  font-size: 15px;
 }

@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import { Row, Col } from "react-bootstrap";
 
 const Event = ({ events, text }) => {
+  const [showMore, setShowMore] = useState(false);
+  const [showMoreText, setShowMoreText] = useState(false);
   return (
     <div>
       <h2>{text === "upcomming" ? `Upcomming Events` : `Past Events`}</h2>
@@ -21,14 +23,32 @@ const Event = ({ events, text }) => {
                     alt={`${event.title}`}
                   />
                   <Card.Body style={{ padding: 0 }}>
-                    <h3 className="text-center">{event.title}</h3>
-                    <Card.Text>{event.description}</Card.Text>
+                    <h4 className="text-center">{event.title}</h4>
+                    <Card.Text className="card-text">
+                      {showMore
+                        ? `${event.description}`
+                        : `${`${event.description}`.substring(0, 90)}`}
+                      <button
+                        onClick={() => {
+                          setShowMore(!showMore);
+                          setShowMoreText(!showMoreText);
+                        }}
+                        className="card-button"
+                      >
+                        <u>Show {showMoreText ? `less` : `more`}</u>
+                      </button>
+                    </Card.Text>
                     {text === "upcomming" ? (
                       <a href={event.registerLink} target="_blank">
-                        <Button variant="primary">Register</Button>
+                        <Button
+                          variant="primary"
+                          className="event-card-button "
+                        >
+                          Register
+                        </Button>
                       </a>
                     ) : (
-                      <h2>no button</h2>
+                      <h6> Date will come </h6>
                     )}
                   </Card.Body>
                 </Card>
