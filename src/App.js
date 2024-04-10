@@ -6,6 +6,7 @@ import HomePage from "./pages/HomePage";
 import GalleryPage from "./pages/GalleryPage";
 import TeamPage from "./pages/TeamPage";
 import EventsPage from "./pages/EventsPage";
+import LoginPage from "./pages/LoginPage";
 function App() {
   return (
     <div>
@@ -13,6 +14,7 @@ function App() {
       <Container>
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="/login" element={<LoginPage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/gallery" element={<GalleryPage />} />
           <Route path="/team" element={<TeamPage />} />

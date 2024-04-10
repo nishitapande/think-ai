@@ -15,7 +15,7 @@ const Event = ({ events, text }) => {
         <Row>
           {events.map((event) => {
             return (
-              <Col>
+              <Col  md={4} key={event._id}>
                 <Card className="event-card">
                   <Card.Img
                     variant="top"
